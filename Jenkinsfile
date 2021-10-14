@@ -1,9 +1,6 @@
 pipeline {
   agent any
   stages {
-  stage('Cleanup') {
-    cleanWs()  
-  }
   stage('Stage 1') {
       steps {
         script {
@@ -17,6 +14,12 @@ pipeline {
           echo 'Stage 2'
         }
       }
+    }
+  }
+  post {
+    always {
+      echo 'I will always execute this!'
+      cleanWs()
     }
   }
 }
