@@ -1,8 +1,9 @@
 pipeline {
   agent any
   stages {
-     when {   { branch 'master'; branch 'release/**' } }
+  
   stage('Stage 1') {
+      when { { branch 'master'; branch 'release/**' } }
       steps {
         script {
           echo 'Stage 1'
