@@ -1,6 +1,7 @@
 pipeline {
   agent any
   stages {
+     when {   { branch 'master'; branch 'release/**' } }
   stage('Stage 1') {
       steps {
         script {
